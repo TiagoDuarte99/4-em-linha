@@ -1,0 +1,21 @@
+<p>
+    <mat-toolbar>
+        <span>4 em Linha</span>
+        <span class="example-spacer"></span>
+        <button class="botaoCabecalho" [ngClass]="obterClass(jogadorAjogar)">{{ obterTextoCabecalho() }}</button>
+        <button class="botaoCabecalho" (click)="reset()">Reset</button>
+    </mat-toolbar>
+</p>
+<div class="container">
+    <div>
+        <table class="tabuleiro ">
+            <tbody>
+                <tr *ngFor="let linha of tabuleiro">
+                    <td *ngFor="let coluna of linha; let j = index" (click)="jogar(j)">
+                        <div class="celula" [ngClass]="obterClass(coluna)"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
